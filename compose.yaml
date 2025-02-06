@@ -1,0 +1,51 @@
+services:
+  api:
+    container_name: api
+    build:
+      context: ./apps/api/
+      dockerfile: ./Dockerfile
+      target: develop-stage
+    volumes:
+      # AWS CLI 認証情報をホストOSの設定から参照する
+      - ~/.aws/:/root/.aws/:cached
+      # app code
+      - type: bind
+        source: ./apps/api/
+        target: /workspaces/apps/api/
+    working_dir: /workspaces/apps/api/
+    ports:
+      - 8080:8080
+    command: ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8080", "--reload","--reload-include", ".env"]
+    env_file:
+      - ./apps/api/.env.aws
+
+  web:
+    container_name: web
+    build:
+      context: ./apps/web/
+      dockerfile: ./Dockerfile
+      target: develop-stage
+    volumes:
+      # app code
+      - type: bind
+        source: ./apps/web/
+        target: /workspaces/apps/web/
+      # volume trick
+      - type: volume
+        source: web_node_volumes
+        target: /workspaces/apps/web/node_modules/
+    ports:
+      - "3000:3000"
+    command: ["npm", "run", "dev"]
+
+  typetalk-api-mock:
+    container_name: typetalk-api-mock
+    image: mockoon/cli:6.2.0
+    volumes:
+      - ./mockoon/typetalk-api.json:/data:readonly
+    ports:
+      - 3010:3010
+    command: ["--data", "data", "--port", "3010"]
+
+volumes:
+  web_node_volumes:
