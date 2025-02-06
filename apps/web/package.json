@@ -1,0 +1,49 @@
+{
+  "name": "typetalk-sentiment-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "markuplint": "markuplint \"**/*.tsx\"",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@date-fns/tz": "^1.1.2",
+    "@t3-oss/env-nextjs": "^0.11.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "next": "15.1.7",
+    "next-auth": "^5.0.0-beta.19",
+    "pino": "^9.5.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "server-only": "^0.0.1",
+    "sharp": "^0.33.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@markuplint/jsx-parser": "^4.7.5",
+    "@markuplint/react-spec": "^4.5.5",
+    "@testing-library/jest-dom": "^6.6.2",
+    "@testing-library/react": "^16.2.0",
+    "@types/node": "^20",
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-v8": "^2.1.2",
+    "daisyui": "^4.12.10",
+    "eslint": "^8",
+    "eslint-config-next": "15.1.7",
+    "eslint-config-prettier": "^9.1.0",
+    "jsdom": "^24.1.1",
+    "markuplint": "^4.9.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5",
+    "vitest": "^2.0.4"
+  }
+}

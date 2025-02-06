@@ -1,0 +1,820 @@
+{
+  "uuid": "a84e11f8-d235-4d87-b3ae-56fef085d11b",
+  "lastMigration": 32,
+  "name": "Typetalk API Mock",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3010,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "2730526c-1abb-437d-8b90-5716e3a48c4d",
+      "type": "http",
+      "documentation": "get topics",
+      "method": "get",
+      "endpoint": "api/v3/topics",
+      "responses": [
+        {
+          "uuid": "27340a96-5eaa-48e6-b66c-43dced8b9004",
+          "body": "{\n  \"topics\": [\n    {\n      \"topic\": {\n        \"id\": 6310,\n        \"name\": \"テストトピック1\",\n        \"suggestion\": \"テストトピック1\",\n        \"isDirectMessage\": false,\n        \"isArchived\": false,\n        \"lastPostedAt\": \"2019-07-29T10:06:14Z\",\n        \"ownerSpaceAccountId\": 103,\n        \"createdAt\": \"2018-10-18T01:43:31Z\",\n        \"updatedAt\": \"2018-10-18T01:43:31Z\"\n      },\n      \"unread\": {\n        \"topicId\": 6310,\n        \"postId\": 174993,\n        \"count\": 0,\n        \"isOverCountLimit\": false\n      }\n    },\n    {\n      \"topic\": {\n        \"id\": 6233,\n        \"name\": \"テストトピック2\",\n        \"suggestion\": \"テストトピック2\",\n        \"isDirectMessage\": false,\n        \"isArchived\": false,\n        \"lastPostedAt\": \"2019-07-17T10:34:29Z\",\n        \"ownerSpaceAccountId\": 103,\n        \"createdAt\": \"2018-09-19T06:00:20Z\",\n        \"updatedAt\": \"2018-09-19T06:00:20Z\"\n      },\n      \"unread\": {\n        \"topicId\": 6233,\n        \"postId\": 175719,\n        \"count\": 0,\n        \"isOverCountLimit\": false\n      }\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "private, no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 13 Feb 2024 11:11:20 GMT"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=2592000"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "via",
+              "value": "1.1 7813c3b749fe8e3a44c4359da4183e70.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "QFkOxdh6Z9TGLIBbKcBbY4gkSwInhuY9FjrWDS-yvkCFQV5YICg2eg=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Miss from cloudfront"
+            },
+            {
+              "key": "content-length",
+              "value": "1922"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "9b17e137-06a1-475a-b85e-c25a46b8f403",
+          "body": "{\n  \"error\": {\n    \"title\": \"The space not found.\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "invalid  spaceKey",
+          "headers": [
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 15 Feb 2024 07:01:21 GMT"
+            },
+            {
+              "key": "via",
+              "value": "1.1 0f047c3093a6688a2e7763dd9b806e14.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "82mKDVVsZcW7iPD3rsOoTf9EE89_EvMfghKatJ4j2JV3r4wlpIo5Zg=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Error from cloudfront"
+            },
+            {
+              "key": "content-length",
+              "value": "42"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "spaceKey",
+              "value": "invalid",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "query",
+              "modifier": "spaceKey",
+              "value": "^$|\\s+",
+              "invert": false,
+              "operator": "regex"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "aa0ff5ca-bcdc-4897-bf39-da6fa5693d9a",
+          "body": "<!DOCTYPE HTML>\n<html lang=\"en-US\">\n  <head>\n    \n<meta charset=\"utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n<meta name=\"robots\" content=\"noindex,nofollow\" />\n<meta name=\"referrer\" content=\"no-referrer\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"-1\" />\n<meta name=\"application-name\" content=\"Typetalk\" />\n<meta name=\"apple-itunes-app\" content=\"app-id=756503889\">\n<link id=\"favicon\" rel=\"shortcut icon\" href=\"/assets/images/favicon.ico\" />\n<link href=\"https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap\" rel=\"stylesheet\">\n<link rel='manifest' href='/manifest.json'>\n<title>Typetalk</title>\n<base href=\"/\" />\n\n    <meta name=\"theme-color\" media=\"(prefers-color-scheme: light)\" content=\"#fff\">\n    <meta name=\"theme-color\" media=\"(prefers-color-scheme: dark)\" content=\"#3b3535\">\n  \n\n    \n<style>\n  :root {\n    --black: 62, 62, 62;\n    --dk-color-base: 59, 53, 53;\n    --dk-color-white: 242, 242, 242;\n    --light-black: 79, 76, 75;\n    --lighter-gray: 210, 210, 210;\n    --orange: 255, 100, 85;\n    --pink: 255, 166, 149;\n    --white: 255, 255, 255;\n\n    --t-accent-color: var(--orange);\n    --t-base-bg-color: var(--white);\n    --t-base-text-color: var(--black);\n  }\n  @media (prefers-color-scheme: dark) {\n    :root {\n      --t-accent-color: var(--pink);\n      --t-base-bg-color: var(--dk-color-base);\n      --t-base-text-color: var(--dk-color-white);\n    }\n  }\n  .theme-light {\n    --t-accent-color: var(--orange);\n    --t-base-bg-color: var(--white);\n    --t-base-text-color: var(--black);\n  }\n  .theme-dark {\n    --t-accent-color: var(--pink);\n    --t-base-bg-color: var(--dk-color-base);\n    --t-base-text-color: var(--dk-color-white);\n  }\n\n  /*\n   * Normalization\n   */\n  :root {\n    -ms-overflow-style: -ms-autohiding-scrollbar;\n    overflow-y: scroll;\n    text-size-adjust: 100%;\n  }\n\n  /*\n   * Universal inheritance\n   */\n  *,\n  ::before,\n  ::after {\n    box-sizing: inherit;\n  }\n\n  * {\n    font-size: inherit;\n    line-height: inherit;\n  }\n\n  ::before,\n  ::after {\n    text-decoration: inherit;\n    vertical-align: inherit;\n  }\n\n  /*\n   * Opinionated defaults\n   */\n  *,\n  ::before,\n  ::after {\n    border-style: solid;\n    border-width: 0;\n  }\n\n  * {\n    margin: 0;\n    padding: 0;\n  }\n\n  :root {\n    box-sizing: border-box;\n    cursor: default;\n    font: 16px/1.5 sans-serif;\n    text-rendering: optimizeLegibility;\n  }\n\n  html {\n    background-color: #fff;\n  }\n\n  a {\n    text-decoration: none;\n  }\n\n  @charset \"UTF-8\";\n  @font-face {\n    font-family: \"Hiragino Sans\";\n    src: local(HiraginoSans-W4);\n    font-weight: 400;\n  }\n  @font-face {\n    font-family: \"Hiragino Sans\";\n    src: local(HiraginoSans-W5);\n    font-weight: 500;\n  }\n  @font-face {\n    font-family: \"Hiragino Sans\";\n    src: local(HiraginoSans-W6);\n    font-weight: 600;\n  }\n  @font-face {\n    font-family: \"Hiragino Sans\";\n    src: local(HiraginoSans-W6);\n    font-weight: 700;\n  }\n  @font-face {\n    font-family: \"Hiragino Sans\";\n    src: local(HiraginoSans-W7);\n    font-weight: 800;\n  }\n  @font-face {\n    font-family: \"Open Sans Fix\";\n    src: url(https://assets.typetalk.com/7.0.1/assets/fonts/OpenSans-SemiBold.ttf) format(\"truetype\");\n    font-style: normal;\n    font-weight: 500;\n    font-display: swap;\n  }\n  @font-face {\n    font-family: \"Meiryo Fix\";\n    src: local(Meiryo-Bold);\n    font-style: normal;\n    font-weight: 500;\n    font-display: swap;\n  }\n  :root {\n    overflow-y: hidden;\n    -ms-overflow-style: scrollbar;\n  }\n\n  @-ms-viewport {\n    width: auto;\n    initial-scale: 1;\n  }\n  @viewport {\n    width: device-width;\n    initial-scale: 1;\n  }\n\n  a:focus {\n    outline: 3px solid rgba(var(--t-accent-color), 0.3);\n    outline-offset: 1px;\n  }\n\n  a:focus:not(:focus-visible) {\n    outline: 0 none;\n  }\n\n  a:focus-visible {\n    outline: 3px solid rgba(var(--t-accent-color), 0.3);\n    outline-offset: 1px;\n  }\n\n  body {\n    font-family: \"Open Sans\", Hiragino Sans, Meiryo, Helvetica, Arial, sans-serif;\n    font-size: calc((13 / 16) * 1rem);\n    text-size-adjust: 100%;\n    user-select: none;\n    overflow: hidden;\n    color: rgba(var(--t-base-text-color), 1);\n    background-color: rgba(var(--t-base-bg-color), 1);\n    -webkit-font-smoothing: subpixel-antialiased;\n    -moz-osx-font-smoothing: auto;\n  }\n  html[lang=ja-JP] body {\n    font-family: \"Open Sans\", Hiragino Sans, \"ヒラギノ角ゴシック\", \"Hiragino Kaku Gothic ProN\", \"ヒラギノ角ゴ ProN W3\", Meiryo, \"メイリオ\", Arial, sans-serif;\n  }\n  @media screen and (min-width: 415px) {\n    body {\n      font-size: calc((14 / 16) * 1rem);\n    }\n  }\n  @media screen and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx), (min-resolution: 144dpi) {\n    body {\n      -webkit-font-smoothing: antialiased;\n      -moz-osx-font-smoothing: grayscale;\n    }\n  }\n\n  a {\n    color: rgba(var(--light-black), 1);\n  }\n  a:hover {\n    text-decoration: underline;\n  }\n\n  .is_windows option {\n    color: #3e3e3e;\n    background-color: #fff;\n  }\n\n  .embed-header {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 40px;\n    padding: 0 10px;\n    min-width: 420px;\n    background-color: #f6f6f6;\n    border-bottom-color: rgba(var(--lighter-gray), 1);\n    z-index: 99;\n  }\n  html[lang=ja-JP] .embed-header {\n    min-width: 460px;\n  }\n  @media screen and (min-width: 600px) {\n    .embed-header {\n      padding: 0 20px;\n    }\n  }\n  .embed-header__logo {\n    display: inline-block;\n    padding: 12px 0 0;\n    margin-left: 0;\n  }\n  .embed-header__logo-wrap {\n    display: block;\n    width: 90px;\n    height: 20px;\n    background-image: url(https://assets.typetalk.com/7.0.1/assets/images/common/logo_typetalk_color.svg);\n    background-size: cover;\n    text-indent: 100%;\n    white-space: nowrap;\n    overflow: hidden;\n  }\n  .embed-error-message {\n    position: relative;\n    height: 400px;\n    padding: 100px 45px 40px;\n    font-size: calc((16 / 16) * 1rem);\n    text-align: center;\n    overflow: hidden;\n  }\n  .embed-error-message:after {\n    content: \"\";\n    position: absolute;\n    bottom: 0;\n    right: -15px;\n    width: 102px;\n    height: 119px;\n    background-image: url(https://assets.typetalk.com/7.0.1/assets/images/embed/mascot.png);\n    background-position: left top;\n    background-repeat: no-repeat;\n    background-size: cover;\n  }\n  @media screen and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx), (min-resolution: 144dpi) {\n    .embed-error-message:after {\n      background-image: url(https://assets.typetalk.com/7.0.1/assets/images/embed/mascot@2x.png);\n    }\n  }\n  .embed-error-message > p:not(:first-child) {\n    margin-top: 25px;\n  }\n  .embed-error-message__messages {\n    font-size: calc((24 / 16) * 1rem);\n    font-weight: 600;\n  }\n  .embed-error-message__btn {\n    display: inline-block;\n    font-size: calc((16 / 16) * 1rem);\n    color: #fff;\n    background-color: #00aeef;\n    margin-top: 25px;\n    padding: 15px 25px;\n    border-radius: 5px;\n  }\n</style>\n\n    \n<style>\n  :root {\n    --light-black: 79, 76, 75;\n    --light-pink: 254, 229, 224;\n    --orange: 255, 100, 85;\n  }\n\n  .page--error {\n    height: 100vh;\n    background-color: rgba(var(--light-pink), 1);\n    overflow-y: auto;\n    opacity: 1;\n  }\n\n  /* page-content */\n  /* =================================================== */\n\n  .main {\n    padding: 20px 0 0;\n    background-color: rgba(var(--light-pink), 1);\n  }\n  @media screen and (min-width: 801px) {\n    .main {\n      min-height: 500px;\n      padding: 40px 0 0;\n    }\n  }\n  .main__body.-centered {\n    width: auto;\n    float: none;\n    margin-right: auto;\n    margin-left: auto;\n    padding-left: 20px;\n    padding-right: 20px;\n    max-width: 1140px;\n  }\n  @media screen and (min-width: 1140px) {\n    .main__body.-centered {\n      padding-left: 0;\n      padding-right: 0;\n    }\n  }\n\n  /* page-header */\n  /* =================================================== */\n\n  .page-header {\n    padding: 15px 20px;\n    background-color: rgba(var(--light-pink), 1);\n  }\n  @media screen and (min-width: 1240px) {\n    .page-header {\n      padding: 15px 0;\n    }\n  }\n  .page-header__inner {\n    max-width: 1230px;\n    margin-left: auto;\n    margin-right: auto;\n  }\n  .page-header__inner:after {\n    display: block;\n    content: \"\";\n    clear: both;\n  }\n  .page-header__branding {\n    float: left;\n    margin-bottom: 0;\n  }\n  .page-header__branding-logo {\n    display: block;\n    width: 36px;\n    height: 36px;\n    margin-top: 12px;\n    text-indent: 100%;\n    white-space: nowrap;\n    overflow: hidden;\n    background-image: url(https://assets.typetalk.com/7.0.1/assets/images/common/logo_typetalk_site_color_mobile.svg);\n    background-position: left top;\n    background-repeat: no-repeat;\n    background-size: cover;\n  }\n  @media screen and (min-width: 801px) {\n    .page-header__branding-logo {\n      margin-top: 9px;\n      width: 155px;\n      height: 42px;\n      background-image: url(https://assets.typetalk.com/7.0.1/assets/images/common/logo_typetalk_site_color.svg);\n    }\n  }\n\n  .page-header-nav {\n    float: right;\n    margin: 10px 0;\n  }\n  .page-header-nav__list-item {\n    display: inline-block;\n    margin-bottom: 0;\n  }\n  .page-header-nav__list-item:not(:first-child) {\n    margin-left: 20px;\n  }\n  @media screen and (min-width: 1025px) {\n    .page-header-nav__list-item:not(:first-child) {\n      margin-left: 42px;\n    }\n  }\n  .page-header-nav__link {\n    position: relative;\n    font-size: calc((15 / 16) * 1rem);\n    color: rgba(var(--orange), 1);\n  }\n  .page-header-nav__link:after {\n    content: \"\";\n    position: absolute;\n    top: 100%;\n    left: 0;\n    width: 100%;\n    height: 2px;\n    margin-top: 8px;\n    background-color: #00aeef;\n    opacity: 0;\n    visibility: hidden;\n    transition: opacity 0.2s linear 0s, visibility 0.2s linear 0s;\n  }\n  .page-header-nav__link:hover {\n    color: rgba(var(--orange), 1);\n    text-decoration: none;\n  }\n  .page-header-nav__link:hover:after, .page-header-nav__link.is_current:after {\n    opacity: 1;\n    visibility: visible;\n  }\n  .page-header-nav__link--signup {\n    display: inline-block;\n    padding: 8px 15px;\n    text-align: center;\n    min-width: 100px;\n    font-weight: bold;\n    border: 1px solid rgba(var(--orange), 1);\n    border-radius: 4px;\n    transition: background-color 0.2s linear 0s, color 0.2s linear 0s;\n  }\n  .page-header-nav__link--signup:after {\n    content: \"\";\n    position: absolute;\n    height: 0;\n    margin-top: 0;\n  }\n  .page-header-nav__link--signup:hover {\n    color: #fff;\n    background-color: rgba(var(--orange), 1);\n  }\n  .page-header-nav__link--signup:hover:after {\n    opacity: 0;\n    visibility: hidden;\n  }\n\n  /* error-content */\n  /* =================================================== */\n\n  .error-content {\n    user-select: text;\n    max-width: 860px;\n    text-align: center;\n    color: rgba(var(--light-black), 1);\n    padding-top: 25px;\n    padding-bottom: 85px;\n    margin-left: auto;\n    margin-right: auto;\n  }\n  @media screen and (min-width: 801px) {\n    .error-content {\n      padding-top: 50px;\n    }\n  }\n  .error-content__image {\n    max-width: 100%;\n    height: auto;\n  }\n  .error-content__image--error {\n    width: 126px;\n  }\n  @media screen and (min-width: 801px) {\n    .error-content__image--error {\n      width: 156px;\n    }\n  }\n  .error-content__ttl {\n    font-size: calc((22 / 16) * 1rem);\n    margin-top: 30px;\n    margin-bottom: 10px;\n  }\n  @media screen and (min-width: 415px) {\n    .error-content__ttl {\n      font-size: calc((26 / 16) * 1rem);\n    }\n  }\n  @media screen and (min-width: 801px) {\n    .error-content__ttl {\n      font-size: calc((48 / 16) * 1rem);\n      margin-top: 60px;\n      margin-bottom: 20px;\n    }\n  }\n  .error-content__txt {\n    font-size: calc((14 / 16) * 1rem);\n  }\n  .error-content__txt a {\n    color: rgba(var(--orange), 1);\n  }\n  @media screen and (min-width: 415px) {\n    .error-content__txt {\n      font-size: calc((18 / 16) * 1rem);\n    }\n  }\n  @media screen and (min-width: 801px) {\n    .error-content__txt {\n      font-size: calc((24 / 16) * 1rem);\n    }\n  }\n</style>\n\n    \n  </head>\n  <body>\n    <div class=\"page page--error\">\n      <header class=\"page-header\" role=\"banner\">\n        <div class=\"page-header__inner\">\n          <div class=\"page-header__branding\"><a class=\"page-header__branding-logo\" href=\"https://typetalk.com\">\n            Typetalk</a></div>\n          <nav class=\"page-header-nav\">\n            <ul class=\"page-header-nav__list\">\n              <li class=\"page-header-nav__list-item\">\n                <a class=\"page-header-nav__link\" href=\"/signin/redirect/nulab\" >Login</a>\n              </li>\n              <li class=\"page-header-nav__list-item\">\n                <a class=\"page-header-nav__link page-header-nav__link--signup\" href=\"/plan/start/free\">Free Sign Up</a>\n              </li>\n            </ul>\n          </nav>\n        </div>\n      </header>\n      <div class=\"page-content -bg-pink\">\n        <main class=\"main\" role=\"main\">\n          <div class=\"main__body -centered\">\n            <div class=\"error-content is_enable-selection\">\n              <img src=\"https://assets.typetalk.com/7.0.1/assets/images/common/img_404@2x.png\" alt=\"404\" width=\"575\" height=\"210\" class=\"error-content__image\">\n              <h2 class=\"error-content__ttl\">Yikes! Page not found.</h2>\n              <p class=\"error-content__txt\">We can&#x27;t find what you are looking for. <br>\n              Please check the URL again or you can contact <a href=\"https://www.typetalk.com/contact/\" target=\"_blank\">support</a>.</p>\n            </div>\n          </div>\n        </main>\n      </div>\n    </div>\n  </body>\n</html>\n<!-- random-length HTML comment: 15VkZyq25rtosnfubvu2ZYMzkvgSpoYhhtH7fwxbdhDKKi2jSkbp8oeiX8yAlLfI2nDYZ1z0W28gZyErYfWWHy3evpdWy8crjgF6X2vtstNHiRw4vIP25IVqvyCkweRU8UQVKBC2tO8PfuJO1YHweaaQMay64DQ3VhMfgNXPbTe4EmJ3AOndoDrydfuVgBM1gXWCk -->",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "spaceKey is null",
+          "headers": [
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "text/html; charset=UTF-8"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 15 Feb 2024 07:00:44 GMT"
+            },
+            {
+              "key": "set-cookie",
+              "value": "csrf=3a425a5cde9e0afec7dbd5b8a94df0e1bb5f1d51-1707980444551-765af49ace2a3bba6e51321d; Path=/; Secure"
+            },
+            {
+              "key": "via",
+              "value": "1.1 dd1e5f64b25d26291895e3c012e6cbce.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "qxACnvhsAkrNHu-AnruKoMJOrz8f1Y5C32eulOBWHLKUi25vfUOyGA=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Error from cloudfront"
+            },
+            {
+              "key": "content-length",
+              "value": "13877"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "spaceKey",
+              "value": "",
+              "invert": false,
+              "operator": "null"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "e3330200-a370-43f4-9fb2-9c2b84375384",
+      "type": "http",
+      "documentation": "get messages",
+      "method": "get",
+      "endpoint": "api/v1/topics/[0-9]+",
+      "responses": [
+        {
+          "uuid": "92ca9f9c-6bfb-45ac-97b1-7f56540c58c4",
+          "body": "{\n  \"mySpace\": {\n    \"space\": {\n      \"key\": \"XXXXXXX\",\n      \"name\": \"Nulab Inc\",\n      \"enabled\": true,\n      \"imageUrl\": \"https://placehold.jp/150x150.png\"\n    },\n    \"myRole\": \"ADMIN\",\n    \"isPaymentAdmin\": true,\n    \"invitableRoles\": [\n      \"ADMIN\",\n      \"USER\",\n      \"GUEST\"\n    ],\n    \"myPlan\": {\n      \"plan\": {\n        \"key\": \"typetalk.standard25\",\n        \"name\": \"スタンダード 25 ユーザー\",\n        \"limitNumberOfUsers\": 25,\n        \"limitNumberOfAllowedAddresses\": 25,\n        \"limitTotalAttachmentSize\": 268435456000\n      },\n      \"enabled\": true,\n      \"trial\": null,\n      \"numberOfUsers\": 5,\n      \"numberOfAllowedAddresses\": 0,\n      \"totalAttachmentSize\": 14356,\n      \"createdAt\": \"2016-01-19T09:29:10Z\",\n      \"updatedAt\": \"2019-08-28T08:19:49Z\"\n    }\n  },\n  \"team\": null,\n  \"topic\": {\n    \"createdAt\": \"2016-02-05T06:13:44Z\",\n    \"lastPostedAt\": \"2019-03-11T08:38:04Z\",\n    \"isArchived\": false,\n    \"suggestion\": \"テストトピック1\",\n    \"name\": \"テストトピック1\",\n    \"description\": \"テストトピックの説明\",\n    \"isDirectMessage\": false,\n    \"id\": 6310,\n    \"updatedAt\": \"2018-10-18T01:54:18Z\"\n  },\n  \"bookmark\": {\n    \"postId\": 172371,\n    \"updatedAt\": \"2019-03-11T08:37:40Z\"\n  },\n  \"postContentsSettings\": {\n    \"collapsedAccountIds\": []\n  },\n  \"posts\": [\n    {\n      \"attachments\": [\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"1\",\n            \"fileName\": \"1.jpg\",\n            \"fileSize\": 472263\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        },\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"2\",\n            \"fileName\": \"2.jpg\",\n            \"fileSize\": 494376\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        },\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"3\",\n            \"fileName\": \"5.jpg\",\n            \"fileSize\": 218100\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        },\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"4\",\n            \"fileName\": \"6.jpg\",\n            \"fileSize\": 627926\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        }\n      ],\n      \"quotedPosts\": [],\n      \"message\": \"テストメッセージ2 abcdefg https://example.com/\",\n      \"mention\": null,\n      \"createdAt\": \"2024-09-11T12:34:56Z\",\n      \"topicId\": 6310,\n      \"contents\": null,\n      \"mentions\": [],\n      \"talks\": [],\n      \"replyTo\": null,\n      \"links\": [\n        {\n          \"id\": 3148,\n          \"url\": \"https://example.com/ja/\",\n          \"contentType\": \"text/html; charset=UTF-8\",\n          \"title\": \"チームにさらなるコラボレーションを | ヌーラボ\",\n          \"description\": \"数百万人ものユーザーがヌーラボのサービスを使用して、チームのコミュニケーションを改善しています。ヌーラボのオンラインコラボレーションツールで、あなたのチームの仕事をもっと楽しくしましょう。\",\n          \"imageUrl\": \"https://placehold.jp/150x150.png\",\n          \"embed\": null,\n          \"createdAt\": \"2015-06-15T06:41:24Z\",\n          \"updatedAt\": \"2017-03-03T10:11:08Z\"\n        }\n      ],\n      \"id\": 154010,\n      \"account\": {\n        \"id\": 2492,\n        \"name\": \"test-user-02\",\n        \"fullName\": \"test-user-02\",\n        \"suggestion\": \"test-user-02\",\n        \"imageUrl\": \"https://placehold.jp/150x150.png\",\n        \"isBot\": false,\n        \"createdAt\": \"2016-01-26T08:19:01Z\",\n        \"updatedAt\": \"2019-09-04T07:25:45Z\"\n      },\n      \"likes\": [],\n      \"updatedAt\": \"2024-09-11T12:34:56Z\"\n    },\n    {\n      \"attachments\": [],\n      \"quotedPosts\": [],\n      \"message\": \"テストメッセージ1 abcdefg あいうえおかきくけこさしすせそたちつてとなにぬねの\",\n      \"mention\": null,\n      \"createdAt\": \"2024-09-12T12:34:56Z\",\n      \"topicId\": 6310,\n      \"contents\": null,\n      \"mentions\": [],\n      \"talks\": [],\n      \"replyTo\": null,\n      \"links\": [],\n      \"id\": 154011,\n      \"account\": {\n        \"id\": 2489,\n        \"name\": \"test-user-01\",\n        \"fullName\": \"Yoshi\",\n        \"suggestion\": \"Yoshi\",\n        \"imageUrl\": \"https://placehold.jp/150x150.png\",\n        \"isBot\": false,\n        \"createdAt\": \"2016-01-26T08:18:12Z\",\n        \"updatedAt\": \"2019-09-04T07:25:45Z\"\n      },\n      \"likes\": [],\n      \"updatedAt\": \"2024-09-12T12:34:56Z\"\n    }\n  ],\n  \"hasNext\": true,\n  \"exceedsAttachmentLimit\": false,\n  \"onboarding\": null,\n  \"myTopic\": {\n    \"id\": 15376,\n    \"topicId\": 6310,\n    \"accountId\": 2488,\n    \"kind\": \"grouped\",\n    \"topicGroupId\": 1703,\n    \"exTopicGroupId\": 1702,\n    \"orderNo\": 0,\n    \"createdAt\": \"2019-02-13T08:27:22Z\",\n    \"updatedAt\": \"2019-02-13T08:27:22Z\"\n  },\n  \"favorite\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "private, no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 13 Feb 2024 11:12:08 GMT"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=2592000"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "via",
+              "value": "1.1 af1dba21626a829695c3fa888cc0952c.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "wHLgK2kIflOomo_5COm9pKwhDwwvFxXT0N5mw7gfPVoCepJakFC_Bw=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Miss from cloudfront"
+            },
+            {
+              "key": "content-length",
+              "value": "1907"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "cd7efd6a-6f3c-48f4-9d7c-23c059d58cde",
+          "body": "{\n  \"mySpace\": {\n    \"space\": {\n      \"key\": \"XXXXXXX\",\n      \"name\": \"Nulab Inc\",\n      \"enabled\": true,\n      \"imageUrl\": \"https://placehold.jp/150x150.png\"\n    },\n    \"myRole\": \"ADMIN\",\n    \"isPaymentAdmin\": true,\n    \"invitableRoles\": [\n      \"ADMIN\",\n      \"USER\",\n      \"GUEST\"\n    ],\n    \"myPlan\": {\n      \"plan\": {\n        \"key\": \"typetalk.standard25\",\n        \"name\": \"スタンダード 25 ユーザー\",\n        \"limitNumberOfUsers\": 25,\n        \"limitNumberOfAllowedAddresses\": 25,\n        \"limitTotalAttachmentSize\": 268435456000\n      },\n      \"enabled\": true,\n      \"trial\": null,\n      \"numberOfUsers\": 5,\n      \"numberOfAllowedAddresses\": 0,\n      \"totalAttachmentSize\": 14356,\n      \"createdAt\": \"2016-01-19T09:29:10Z\",\n      \"updatedAt\": \"2019-08-28T08:19:49Z\"\n    }\n  },\n  \"team\": null,\n  \"topic\": {\n    \"createdAt\": \"2016-02-05T06:13:44Z\",\n    \"lastPostedAt\": \"2019-03-11T08:38:04Z\",\n    \"isArchived\": false,\n    \"suggestion\": \"テストトピック1\",\n    \"name\": \"テストトピック1\",\n    \"description\": \"テストトピックの説明\",\n    \"isDirectMessage\": false,\n    \"id\": 6310,\n    \"updatedAt\": \"2018-10-18T01:54:18Z\"\n  },\n  \"bookmark\": {\n    \"postId\": 172371,\n    \"updatedAt\": \"2019-03-11T08:37:40Z\"\n  },\n  \"postContentsSettings\": {\n    \"collapsedAccountIds\": []\n  },\n  \"posts\": [\n    {\n      \"attachments\": [\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"1\",\n            \"fileName\": \"1.jpg\",\n            \"fileSize\": 472263\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        },\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"2\",\n            \"fileName\": \"2.jpg\",\n            \"fileSize\": 494376\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        },\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"3\",\n            \"fileName\": \"5.jpg\",\n            \"fileSize\": 218100\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        },\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"4\",\n            \"fileName\": \"6.jpg\",\n            \"fileSize\": 627926\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        }\n      ],\n      \"quotedPosts\": [],\n      \"message\": \"テストメッセージ2 abcdefg https://example.com/\",\n      \"mention\": null,\n      \"createdAt\": \"2024-09-11T12:34:56Z\",\n      \"topicId\": 6310,\n      \"contents\": null,\n      \"mentions\": [],\n      \"talks\": [],\n      \"replyTo\": null,\n      \"links\": [\n        {\n          \"id\": 3148,\n          \"url\": \"https://example.com/ja/\",\n          \"contentType\": \"text/html; charset=UTF-8\",\n          \"title\": \"チームにさらなるコラボレーションを | ヌーラボ\",\n          \"description\": \"数百万人ものユーザーがヌーラボのサービスを使用して、チームのコミュニケーションを改善しています。ヌーラボのオンラインコラボレーションツールで、あなたのチームの仕事をもっと楽しくしましょう。\",\n          \"imageUrl\": \"https://placehold.jp/150x150.png\",\n          \"embed\": null,\n          \"createdAt\": \"2015-06-15T06:41:24Z\",\n          \"updatedAt\": \"2017-03-03T10:11:08Z\"\n        }\n      ],\n      \"id\": 154010,\n      \"account\": {\n        \"id\": 2492,\n        \"name\": \"test-user-02\",\n        \"fullName\": \"test-user-02\",\n        \"suggestion\": \"test-user-02\",\n        \"imageUrl\": \"https://placehold.jp/150x150.png\",\n        \"isBot\": false,\n        \"createdAt\": \"2016-01-26T08:19:01Z\",\n        \"updatedAt\": \"2019-09-04T07:25:45Z\"\n      },\n      \"likes\": [],\n      \"updatedAt\": \"2024-09-11T12:34:56Z\"\n    }\n  ],\n  \"hasNext\": true,\n  \"exceedsAttachmentLimit\": false,\n  \"onboarding\": null,\n  \"myTopic\": {\n    \"id\": 15376,\n    \"topicId\": 6310,\n    \"accountId\": 2488,\n    \"kind\": \"grouped\",\n    \"topicGroupId\": 1703,\n    \"exTopicGroupId\": 1702,\n    \"orderNo\": 0,\n    \"createdAt\": \"2019-02-13T08:27:22Z\",\n    \"updatedAt\": \"2019-02-13T08:27:22Z\"\n  },\n  \"favorite\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "with from",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "private, no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 13 Feb 2024 11:12:08 GMT"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=2592000"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "via",
+              "value": "1.1 af1dba21626a829695c3fa888cc0952c.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "wHLgK2kIflOomo_5COm9pKwhDwwvFxXT0N5mw7gfPVoCepJakFC_Bw=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Miss from cloudfront"
+            },
+            {
+              "key": "content-length",
+              "value": "1907"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "from",
+              "value": "154011",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "9a00b03f-dcee-424f-a817-215cf6f42538",
+      "type": "http",
+      "documentation": "get spaces",
+      "method": "get",
+      "endpoint": "api/v1/spaces",
+      "responses": [
+        {
+          "uuid": "e7ddc354-0575-41cb-9979-1c1edf406692",
+          "body": "{\n  \"mySpaces\": [\n    {\n      \"space\": {\n        \"key\": \"abcdefghij\",\n        \"name\": \"テスト組織1\",\n        \"enabled\": true,\n        \"imageUrl\": \"https://placehold.jp/150x150.png\"\n      },\n      \"myRole\": \"ADMIN\",\n      \"isPaymentAdmin\": true,\n      \"myPlan\": {\n        \"plan\": {\n          \"key\": \"typetalk.free\",\n          \"name\": \"Free Plan\",\n          \"limitNumberOfUsers\": 10,\n          \"limitTotalAttachmentSize\": 1073741824\n        },\n        \"enabled\": true,\n        \"trial\": null,\n        \"numberOfUsers\": 6,\n        \"totalAttachmentSize\": 0,\n        \"createdAt\": \"2016-01-10T02:32:29Z\",\n        \"updatedAt\": \"2016-12-21T10:12:18Z\"\n      }\n    },\n    {\n      \"space\": {\n        \"key\": \"0123456789\",\n        \"name\": \"テスト組織2\",\n        \"enabled\": true,\n        \"imageUrl\": \"https://placehold.jp/150x150.png\"\n      },\n      \"myRole\": \"USER\",\n      \"isPaymentAdmin\": false,\n      \"myPlan\": {\n        \"plan\": {\n          \"key\": \"typetalk.starter\",\n          \"name\": \"Starter Plan\",\n          \"limitNumberOfUsers\": 10,\n          \"limitTotalAttachmentSize\": 10737418240\n        },\n        \"enabled\": true,\n        \"trial\": {\n          \"endDate\": \"2017-01-04\",\n          \"daysLeft\": 15\n        },\n        \"numberOfUsers\": 2,\n        \"totalAttachmentSize\": 0,\n        \"createdAt\": \"2016-12-06T01:11:43Z\",\n        \"updatedAt\": \"2016-12-21T01:11:43Z\"\n      }\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "private, no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Tue, 13 Feb 2024 14:35:13 GMT"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=2592000"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "via",
+              "value": "1.1 a18933bae530d3ba9bbc6e489a19fde8.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "NENa7A8jzZ0DK7sNPvgZaiQDOGTpUEJAXx1fj6ANgcwJnLiTPl9LvQ=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Miss from cloudfront"
+            },
+            {
+              "key": "content-length",
+              "value": "1384"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "5e83998a-34ee-45b6-949e-0161768534f7",
+      "type": "http",
+      "documentation": "Fallback Route",
+      "method": "all",
+      "endpoint": "*",
+      "responses": [
+        {
+          "uuid": "9215989d-32a6-401d-a9c4-d52b4326ebef",
+          "body": "",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "invalid_request",
+          "headers": [
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "date",
+              "value": "Wed, 14 Feb 2024 10:09:18 GMT"
+            },
+            {
+              "key": "via",
+              "value": "1.1 80814d3806accb83cfb901833749383e.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "www-authenticate",
+              "value": "Bearer error=\"invalid_request\", error_description=\"Access token is not found\""
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "e4wd8-abPlRQ93wLV_mF0M4EEpaQQarPKmI9t6vepNs-Ot5PpRjYxg=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Error from cloudfront"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "",
+              "invert": false,
+              "operator": "null"
+            },
+            {
+              "target": "query",
+              "modifier": "access_token",
+              "value": "",
+              "invert": false,
+              "operator": "null"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "54c0a5e8-133b-469a-8f0e-9f1e9b4be9c5",
+          "body": "",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "invalid_token",
+          "headers": [
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "date",
+              "value": "Wed, 14 Feb 2024 10:06:55 GMT"
+            },
+            {
+              "key": "via",
+              "value": "1.1 428e308f6493e8c2a9e7e3b80d632f44.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "www-authenticate",
+              "value": "Bearer error=\"invalid_token\", error_description=\"The access token is not found\""
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "01IVOFWxuUB_8KdbUWaHt0wsNjLPEytW1ZCT0UkVoIr46kVRG5SkPw=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Error from cloudfront"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "Authorization",
+              "value": "Bearer invalid_typetalk_token",
+              "invert": false,
+              "operator": "equals"
+            },
+            {
+              "target": "query",
+              "modifier": "access_token",
+              "value": "invalid_typetalk_token",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": "FALLBACK"
+    },
+    {
+      "uuid": "d08cdb0e-ede8-4885-848b-222df614c4c9",
+      "type": "http",
+      "documentation": "get messages ( topicId is 0 ) ",
+      "method": "get",
+      "endpoint": "api/v1/topics/0",
+      "responses": [
+        {
+          "uuid": "95413878-4e78-4e8f-85f4-b97deaa76255",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "invalid topic id",
+          "headers": [
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Thu, 15 Feb 2024 07:02:43 GMT"
+            },
+            {
+              "key": "via",
+              "value": "1.1 002f4e6e9a2863fad90c4c4476703744.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "ly5LiF4clMrKq0X5OHi4N0HDtI94uBPVDiJNcaK6boJ4CogEOx5utQ=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Error from cloudfront"
+            },
+            {
+              "key": "content-length",
+              "value": "2"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "5ca03969-1878-45ad-9d4a-c0fbad4357ef",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/v1/topics/390668",
+      "responses": [
+        {
+          "uuid": "497a96a2-a6f9-47bd-8644-26095433fa82",
+          "body": "{\n  \"mySpace\": {\n    \"space\": {\n      \"key\": \"XXXXXXX\",\n      \"name\": \"Nulab Inc\",\n      \"enabled\": true,\n      \"imageUrl\": \"https://placehold.jp/150x150.png\"\n    },\n    \"myRole\": \"ADMIN\",\n    \"isPaymentAdmin\": true,\n    \"invitableRoles\": [\n      \"ADMIN\",\n      \"USER\",\n      \"GUEST\"\n    ],\n    \"myPlan\": {\n      \"plan\": {\n        \"key\": \"typetalk.standard25\",\n        \"name\": \"スタンダード 25 ユーザー\",\n        \"limitNumberOfUsers\": 25,\n        \"limitNumberOfAllowedAddresses\": 25,\n        \"limitTotalAttachmentSize\": 268435456000\n      },\n      \"enabled\": true,\n      \"trial\": null,\n      \"numberOfUsers\": 5,\n      \"numberOfAllowedAddresses\": 0,\n      \"totalAttachmentSize\": 14356,\n      \"createdAt\": \"2016-01-19T09:29:10Z\",\n      \"updatedAt\": \"2019-08-28T08:19:49Z\"\n    }\n  },\n  \"team\": null,\n  \"topic\": {\n    \"id\": 390668,\n    \"name\": \"分析対象メッセージ0件のトピック\",\n    \"suggestion\": \"分析対象メッセージ0件のトピック\",\n    \"isDirectMessage\": false,\n    \"isArchived\": false,\n    \"lastPostedAt\": \"2024-02-17T15:32:09Z\",\n    \"ownerSpaceAccountId\": 59648,\n    \"createdAt\": \"2023-11-09T05:38:19Z\",\n    \"updatedAt\": \"2023-11-09T05:38:19Z\",\n    \"description\": \"\"\n  },\n  \"bookmark\": {\n    \"postId\": 126996578,\n    \"updatedAt\": \"2024-02-17T15:32:09Z\"\n  },\n  \"postContentsSettings\": {\n    \"collapsedAccountIds\": []\n  },\n  \"posts\": [\n    {\n      \"id\": 126996574,\n      \"topicId\": 390668,\n      \"replyTo\": null,\n      \"message\": \"\",\n      \"contents\": null,\n      \"account\": {\n        \"id\": 2492,\n        \"name\": \"test-user-02\",\n        \"fullName\": \"test-user-02\",\n        \"suggestion\": \"test-user-02\",\n        \"imageUrl\": \"https://placehold.jp/150x150.png\",\n        \"isBot\": false,\n        \"createdAt\": \"2016-01-26T08:19:01Z\",\n        \"updatedAt\": \"2019-09-04T07:25:45Z\"\n      },\n      \"mention\": null,\n      \"mentions\": [],\n      \"attachments\": [\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"1\",\n            \"fileName\": \"1.jpg\",\n            \"fileSize\": 472263\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        }\n      ],\n      \"likes\": [],\n      \"talks\": [],\n      \"links\": [],\n      \"quotedPosts\": [],\n      \"createdAt\": \"2024-02-17T15:31:53Z\",\n      \"updatedAt\": \"2024-02-17T15:31:53Z\"\n    },\n    {\n      \"id\": 126996578,\n      \"topicId\": 390668,\n      \"replyTo\": null,\n      \"message\": \"\",\n      \"contents\": null,\n      \"account\": {\n        \"id\": 2492,\n        \"name\": \"test-user-02\",\n        \"fullName\": \"test-user-02\",\n        \"suggestion\": \"test-user-02\",\n        \"imageUrl\": \"https://placehold.jp/150x150.png\",\n        \"isBot\": false,\n        \"createdAt\": \"2016-01-26T08:19:01Z\",\n        \"updatedAt\": \"2019-09-04T07:25:45Z\"\n      },\n      \"mention\": null,\n      \"mentions\": [],\n      \"attachments\": [\n        {\n          \"attachment\": {\n            \"contentType\": \"application/octet-stream\",\n            \"fileKey\": \"1\",\n            \"fileName\": \"1.jpg\",\n            \"fileSize\": 472263\n          },\n          \"webUrl\": \"https://placehold.jp/150x150.png\",\n          \"apiUrl\": \"https://placehold.jp/150x150.png\"\n        }\n      ],\n      \"likes\": [],\n      \"talks\": [],\n      \"links\": [],\n      \"quotedPosts\": [],\n      \"createdAt\": \"2024-02-17T15:32:09Z\",\n      \"updatedAt\": \"2024-02-17T15:32:09Z\"\n    }\n  ],\n  \"hasNext\": false,\n  \"exceedsAttachmentLimit\": false,\n  \"onboarding\": null,\n  \"myTopic\": {\n    \"id\": 15376,\n    \"topicId\": 390668,\n    \"accountId\": 2488,\n    \"kind\": \"grouped\",\n    \"topicGroupId\": 1703,\n    \"exTopicGroupId\": 1702,\n    \"orderNo\": 0,\n    \"createdAt\": \"2019-02-13T08:27:22Z\",\n    \"updatedAt\": \"2019-02-13T08:27:22Z\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "blank message",
+          "headers": [
+            {
+              "key": "cache-control",
+              "value": "private, no-cache, no-store, must-revalidate"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "date",
+              "value": "Sat, 17 Feb 2024 15:33:49 GMT"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "set-cookie",
+              "value": "csrf=d43943dc7516eded59d81c6da7e1c7779da274eb-1708184029809-e269d9e4d474affde9504d89; Path=/; Secure"
+            },
+            {
+              "key": "strict-transport-security",
+              "value": "max-age=2592000"
+            },
+            {
+              "key": "vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "via",
+              "value": "1.1 29bc979ed5b97121d22a3551faf230d4.cloudfront.net (CloudFront)"
+            },
+            {
+              "key": "x-amz-cf-id",
+              "value": "oQXn_Pfc_AlbWQ6WBmWn9OOHLysd__kOlkdv-NUAL8kEtxWyIMVI0g=="
+            },
+            {
+              "key": "x-amz-cf-pop",
+              "value": "NRT57-P4"
+            },
+            {
+              "key": "x-cache",
+              "value": "Miss from cloudfront"
+            },
+            {
+              "key": "content-length",
+              "value": "3047"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "5e83998a-34ee-45b6-949e-0161768534f7"
+    },
+    {
+      "type": "route",
+      "uuid": "9a00b03f-dcee-424f-a817-215cf6f42538"
+    },
+    {
+      "type": "route",
+      "uuid": "2730526c-1abb-437d-8b90-5716e3a48c4d"
+    },
+    {
+      "type": "route",
+      "uuid": "d08cdb0e-ede8-4885-848b-222df614c4c9"
+    },
+    {
+      "type": "route",
+      "uuid": "5ca03969-1878-45ad-9d4a-c0fbad4357ef"
+    },
+    {
+      "type": "route",
+      "uuid": "e3330200-a370-43f4-9fb2-9c2b84375384"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "https://typetalk.com",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
