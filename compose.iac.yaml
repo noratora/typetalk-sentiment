@@ -1,0 +1,31 @@
+services:
+  iac:
+    container_name: "iac"
+    build: ./infra/iac/cdk/
+    volumes:
+      # AWS CLI 認証情報をホストOSの設定から参照する
+      - ~/.aws/:/root/.aws/:cached
+      # docker-outside-of-docker
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+      # app code
+      - type: bind
+        source: .
+        target: /workspaces
+      # volume trick
+      - type: volume
+        source: iac_web_node_volumes
+        target: /workspaces/apps/web/node_modules/
+      - type: volume
+        source: iac_cdk_node_volumes
+        target: /workspaces/infra/iac/cdk/node_modules/
+    working_dir: /workspaces/infra/iac/cdk
+    tty: true
+    stdin_open: true
+    env_file:
+      - ./infra/iac/cdk/.env
+
+volumes:
+  iac_web_node_volumes:
+  iac_cdk_node_volumes:

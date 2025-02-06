@@ -1,0 +1,6 @@
+# Environments
+.env
+
+# misc
+.DS_Store
+*.pem
